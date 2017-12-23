@@ -519,20 +519,6 @@ public class CzSys_HTTP {
 
     }
 
-    public static void showImageUrlInImageView(final String url,final ImageView iv){
-        new Thread(){
-            public void run(){
-                final Bitmap bmp=getHttpBitmap(url);
-                iv.post(new Runnable() {
-                    @Override
-                    public void run() {
-                        iv.setImageBitmap(bmp);
-                        CzLibrary.recycleBitmap(bmp);
-                    }
-                });
-            }
-        }.start();
-    }
 
     /**
      * 获取网落图片资源
